@@ -62,29 +62,28 @@ def menu ():
                 print(f"b. La aceleración del electrón es de {aceleracion} m/s^2.")
                 print("")    
             elif opcion == 4:
-                """
-                
-                a.  
-                """
                 print ("Dos pilotos de carritos están separados por una distancia inicial en una pista larga y recta, mirando en direcciones opuestas.\n")
-                distancia_inicial = input("Ingrese la distancia inicial entre los carritos: ")
+                distancia_inicial = float(input("Ingrese la distancia inicial entre los carritos: "))
                 print("")
                 print("Ambos parten al mismo tiempo y aceleran con una tasa constante de m/s^2.\n")
-                A_1 = input("Ingrese la velocidad inicial del primer carrito: ")
-                print("")
-                A_2 = input("Ingrese la velocidad inicial del segundo carrito: ")
-                print("")
-                print("¿Qué separación tendrán los carritos luego de 3.0 s?\n¿Cuánto tiempo le toma a los pilotos toparse en la pista?\nRealice un programa que permita calcular los incisos a y b recibiendo como parámetroslos 3 datos que se indican en el enunciado.")
 
+                A_1 = float(input("Ingrese la velocidad inicial del primer carrito: "))
+                print("")
+                A_2 = float(input("Ingrese la velocidad inicial del segundo carrito: "))
+                print("")
+
+                print("¿Qué separación tendrán los carritos luego de 3.0 s?")
                 VI_1 = 0
                 VI_2 = VI_1
                 T = 3
-                print("a. ¿Qué separación tendrán los carritos luego de 3.0 s?\n")
-                deltaX[0, 0] = mrua_f2_deltaX(VI_1, VI_2, T, A_1, A_2)
-                mrua_f2_tiempo(deltaX[0], delta[1], distancia_inicial)
-                print(f"La separación entre los carritos luego de 3.0 s es de {deltaX[0]} m.\n")
-                print("")
-                print("b. ¿Cuánto tiempo le toma a los pilotos toparse en la pista?\n")
+                deltaX = mrua_f2_deltaX(VI_1, VI_2, T, A_1, A_2)
+                distancia_final = resta_deltaX(deltaX[0], deltaX[1])
+                print(f"La separación entre los carritos luego de 3.0 s es de {distancia_final} m.\n")
+
+                print("¿Cuánto tiempo le toma a los pilotos toparse en la pista?")
+                tiempo = mrua_f2_tiempo(deltaX[0], deltaX[1], distancia_inicial)
+                tiempo = round(tiempo, 2)
+                print(f"El tiempo que le toma a los pilotos toparse en la pista es de {tiempo} s.\n")
                 
             elif opcion == 5:
                 print ("Ingrese la altura de la persona:")

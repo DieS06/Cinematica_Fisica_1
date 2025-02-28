@@ -35,16 +35,9 @@ def mrua_f2_deltaX(VI_1, VI_2, T, A_1, A_2):
     return [deltaX_1, deltaX_2]
 
 def mrua_f2_tiempo(deltaX_1, deltaX_2, distancia_inicial):
-    tiempo = (2 * distancia_inicial) / (deltaX_1 + deltaX_2)
-    result = tiempo**2
+    tiempo = 2 * distancia_inicial / deltaX_1 + deltaX_2
+    result = math.sqrt(tiempo)
     return result
-    
-# def mrua_f3_VF_alCuadrado(velocidad_inicial, aceleracion, deltaX):
-#     velocidad_final = velocidad_inicial**2 + 2 * aceleracion * deltaX
-#     result = (velocidad_final)**2
-#     return result
 
-# def mrua_f1_VF(velocidad_inicial, aceleracion, tiempo):
-#     velocidad_final = velocidad_inicial + aceleracion * tiempo
-#     return velocidad_final
+#Ejercicio 5
 
