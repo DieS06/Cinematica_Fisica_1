@@ -7,7 +7,7 @@ def menu ():
         print("2.- Ejercicio 2, Crecimiento del cabello")
         print("3.- Ejercicio 3, Aceleración de un electrón")
         print("4.- Ejercicio 4, Pilotos de carritos")
-        print("5.- Ejercicio 5, ")
+        print("5.- Ejercicio 5, Tren, tiempo perdido")
         print("0.- Salir\n")
 
         try:
@@ -84,9 +84,30 @@ def menu ():
                 tiempo = mrua_f2_tiempo(deltaX[0], deltaX[1], distancia_inicial)
                 tiempo = round(tiempo, 2)
                 print(f"El tiempo que le toma a los pilotos toparse en la pista es de {tiempo} s.\n")
-                
             elif opcion == 5:
-                print ("Ingrese la altura de la persona:")
+                print ("Un tren normalmente viaja con rapidez uniforme de 72km/h por un tramo largo de vía recta y plana.\nCierto día, el tren debe hacer una parada de 2 minutos en una estación sobre la vía.\nSi el tren desacelera con una tasa uniforme de 1.0 m/s^2 y, después de la parada, acelera con una tasa de 0.5m/s^2.\n")
+                VI = convertir_km_h_A_m_s(72)
+                VF = 0
+                A = -1
+
+                print("¿Cuánto tiempo tarda el tren en detenerse?")
+                T1 = mrua_f3_tiempo(VF, VI, A)
+                T1 = round(T1, 2)
+                print(f"El tren tarda {T1} s en detenerse.\n")
+
+                print("¿Cuánto tiempo tarda el tren en acelerar de nuevo hasta su rapidez original?")
+                A = 0.5
+                VF = convertir_km_h_A_m_s(72)
+                VI = 0
+                T2 = mrua_velocidad_final(VF, VI, A)
+                T2 = round(T2, 2)
+                print(f"El tren tarda {T2} s en acelerar de nuevo hasta su rapidez original.\n")
+
+                print("¿Cuánto tiempo hábra perdido por parar en la estación?")
+                tiempo_perdido = T1 + 120 + T2
+                tiempo_perdido = round(tiempo_perdido, 2)
+                print(f"El tren habrá perdido {tiempo_perdido} s por parar en la estación.\n")
+
             elif opcion == 0:
                 print("¡Programa terminado!")
                 break

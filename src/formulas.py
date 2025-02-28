@@ -41,3 +41,9 @@ def mrua_f2_tiempo(deltaX_1, deltaX_2, distancia_inicial):
 
 #Ejercicio 5
 
+def convertir_km_h_A_m_s(km_h):
+    return km_h * 1000 / 3600
+
+def mrua_velocidad_final(VF, VI, A):
+    T = (VF - VI) / A
+    return T
